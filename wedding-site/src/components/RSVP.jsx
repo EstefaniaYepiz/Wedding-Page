@@ -58,7 +58,7 @@ function RSVP() {
 				{error && <p className="error-message">{error}</p>}
 				{submitted ? (
 					<div className="thank-you-card reveal">
-						<h3>Gracias por confirmar 🤍</h3>
+						<h3>Gracias por confirmar</h3>
 						<p>Estamos muy felices de compartir este día contigo.</p>
 					</div>
 				) : (

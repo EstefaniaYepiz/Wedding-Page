@@ -5,6 +5,7 @@ import EventDetails from "../components/EventDetails";
 import RSVP from "../components/RSVP";
 import PhotoSection from "../components/PhotoSection";
 import Countdown from "../components/Countdown";
+import Invitation from "../components/Invitation";
 import "../styles/global.css";
 
 function App() {
@@ -78,6 +79,9 @@ function App() {
 			<Header />
 			<div className="fade-section">
 				<InvitationMessage />
+			</div>
+			<div className="fade-section">
+				<Invitation />
 			</div>
 
 			<div className="fade-section">
