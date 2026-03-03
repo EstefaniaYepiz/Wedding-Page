@@ -83,19 +83,19 @@ function App() {
 			<div className="fade-section">
 				<Invitation />
 			</div>
-
+			<div className="section-divider"></div>
 			<div className="fade-section">
 				<Countdown />
 			</div>
-
+			<div className="section-divider"></div>
 			<div className="fade-section">
 				<EventDetails />
 			</div>
-
+			<div className="section-divider"></div>
 			<div className="fade-section">
 				<RSVP />
 			</div>
-
+			<div className="section-divider"></div>
 			<div className="fade-section">
 				<PhotoSection />
 			</div>

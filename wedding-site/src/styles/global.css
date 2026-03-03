@@ -35,6 +35,7 @@ input {
 	padding: 3rem 2rem;
 	text-align: center;
 	animation: fadeSlide 0.8s ease forwards;
+	border-radius: 10px;
 }
 
 .thank-you-card h3 {
@@ -78,6 +79,9 @@ input {
 	--space-md: 2rem;
 	--space-lg: 4rem;
 	--space-xl: 6rem;
+	--champagne: #e8d8c3;
+	--blush: #d9b8b0;
+	--soft-gold: #c6a75e;
 }
 
 /* Base styles */
@@ -89,6 +93,7 @@ input {
 
 body {
 	background-color: var(--paper);
+	background: linear-gradient(180deg, #faf7f3 0%, #f3ede6 100%);
 	position: relative;
 	background-image: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
 	background-repeat: repeat;
@@ -107,11 +112,19 @@ body::after {
 	height: 500px;
 	background: url("../assets/floral-bg.svg") no-repeat center;
 	background-size: contain;
-	opacity: 0.8;
+	opacity: 0.1;
 	pointer-events: none;
 	z-index: -1;
+	animation: floatFlorals 12s ease-in-out infinite alternate;
 }
-
+@keyframes floatFlorals {
+	from {
+		transform: translateY(0);
+	}
+	to {
+		transform: translateY(20px);
+	}
+}
 body::before {
 	top: -100px;
 	right: -120px;
@@ -122,7 +135,13 @@ body::after {
 	left: -120px;
 	transform: rotate(180deg);
 }
-
+p {
+	letter-spacing: 0.02em;
+}
+.detail-date,
+.detail-venue {
+	letter-spacing: 0.08em;
+}
 .container {
 	max-width: 720px;
 	margin: 0 auto;
@@ -132,9 +151,11 @@ body::after {
 /* Header styles */
 .names {
 	font-family: "Allura", cursive;
-	font-size: 4rem;
+	font-size: 4.5rem;
 	color: var(--ink-blue);
 	margin-bottom: var(--space-md);
+	letter-spacing: 0.05em;
+	text-shadow: 0 5px 20px rgba(47, 65, 89, 0.15);
 }
 
 .date {
@@ -164,11 +185,26 @@ body::after {
 /* Section Title */
 .section-title {
 	font-family: "Cormorant Garamond", serif;
-	font-size: 1.8rem;
-	letter-spacing: 0.1em;
+	font-size: 2rem;
+	letter-spacing: 0.2em;
 	text-transform: uppercase;
 	color: var(--ink-blue);
 	margin-bottom: var(--space-lg);
+	position: relative;
+}
+.section-title::after {
+	content: "";
+	display: block;
+	width: 60px;
+	height: 1px;
+	margin: 1rem auto 0;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		var(--soft-gold),
+		transparent
+	);
+	opacity: 0.6;
 }
 
 /*    Details Card */
@@ -181,7 +217,9 @@ body::after {
 	border-radius: 20px;
 	background: rgba(255, 255, 255, 0.6);
 	backdrop-filter: blur(3px);
-	box-shadow: 0 25px 60px rgba(47, 65, 89, 0.08);
+	box-shadow:
+		0 30px 70px rgba(47, 65, 89, 0.08),
+		0 0 40px rgba(232, 216, 195, 0.15);
 }
 
 .details-card::before {
@@ -235,7 +273,9 @@ body::after {
 	border-radius: 25px;
 	background: rgba(255, 255, 255, 0.6);
 	border: 1px solid rgba(47, 65, 89, 0.25);
-	box-shadow: 0 30px 70px rgba(47, 65, 89, 0.08);
+	box-shadow:
+		0 30px 70px rgba(47, 65, 89, 0.08),
+		0 0 40px rgba(232, 216, 195, 0.15);
 	backdrop-filter: blur(4px);
 	overflow: hidden;
 }
@@ -247,7 +287,7 @@ body::after {
 	height: 140px;
 	background: url("../assets/floral-corner.svg") no-repeat center;
 	background-size: contain;
-	opacity: 0.5;
+	opacity: 0.2;
 	pointer-events: none;
 	z-index: 0;
 }
@@ -311,12 +351,17 @@ textarea:focus {
 	text-transform: uppercase;
 	cursor: pointer;
 	color: var(--paper);
-	transition: all 0.3s ease;
-	border-radius: 10px;
+	background: var(--ink-blue);
+	border-radius: 50px;
+	box-shadow: 0 10px 25px rgba(47, 65, 89, 0.2);
+	transition: all 0.4s ease;
 }
 
 .rsvp-button:hover {
-	transform: scale(1.05);
+	transform: translateY(-3px);
+	box-shadow:
+		0 15px 35px rgba(47, 65, 89, 0.25),
+		0 0 20px rgba(198, 167, 94, 0.4);
 	background-color: var(--ink-blue);
 	color: var(--paper);
 }
@@ -889,7 +934,9 @@ th {
 	margin: 0 auto;
 	border-radius: 20px;
 	overflow: hidden;
-	box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+	box-shadow:
+		0 30px 70px rgba(47, 65, 89, 0.08),
+		0 0 40px rgba(232, 216, 195, 0.15);
 	transition: transform 0.4s ease;
 	border: 1px solid rgba(47, 65, 89, 0.15);
 }
@@ -936,5 +983,74 @@ th {
 
 	.invitation-title {
 		font-size: 1.5rem;
+	}
+}
+.section-divider {
+	margin: var(--space-xl) auto;
+	width: 260px;
+	height: 50px;
+	background: url("/floral-divider.svg") no-repeat center;
+	background-size: contain;
+	opacity: 0.35;
+}
+section {
+	padding-top: var(--space-xl);
+	padding-bottom: var(--space-xl);
+	position: relative;
+}
+section::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80%;
+	height: 1px;
+	background: linear-gradient(
+		90deg,
+		transparent,
+		rgba(198, 167, 94, 0.3),
+		transparent
+	);
+}
+.confirmation-wave path {
+	stroke-dasharray: 600;
+	stroke-dashoffset: 600;
+	animation: drawWave 2.5s ease forwards;
+}
+
+@keyframes drawWave {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+.gold-line {
+	opacity: 0;
+	animation: fadeGold 1s ease forwards;
+	animation-delay: 4s;
+}
+@keyframes fadeGold {
+	to {
+		opacity: 0.6;
+	}
+}
+.confirmation-wave {
+	opacity: 0;
+	transform: translateY(10px);
+	animation: revealWave 0.8s ease forwards;
+	width: 80%;
+	margin: 2rem auto 0;
+}
+.confirmation-wave path {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: drawWave 3.5s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+	animation-delay: 0.8s;
+	filter: drop-shadow(0 2px 6px rgba(62, 88, 115, 0.2));
+}
+@keyframes revealWave {
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
 }

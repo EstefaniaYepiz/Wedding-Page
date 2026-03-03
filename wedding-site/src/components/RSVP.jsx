@@ -58,8 +58,21 @@ function RSVP() {
 				{error && <p className="error-message">{error}</p>}
 				{submitted ? (
 					<div className="thank-you-card reveal">
-						<h3>Gracias por confirmar</h3>
+						<h2>Gracias por confirmar</h2>
 						<p>Estamos muy felices de compartir este día contigo.</p>
+						<div className="handwritten-confirmation">
+							<div className="confirmation-wave">
+								<svg viewBox="0 0 400 100">
+									<path
+										d="M20 60 C 80 10, 160 110, 240 60 S 360 10, 380 60"
+										fill="none"
+										stroke="#3e5873"
+										strokeWidth="2.5"
+										strokeLinecap="round"
+									/>
+								</svg>
+							</div>
+						</div>
 					</div>
 				) : (
 					<form onSubmit={handleSubmit} className="rsvp-form">
