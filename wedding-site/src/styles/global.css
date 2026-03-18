@@ -370,7 +370,7 @@ textarea:focus {
 
 .hero {
 	height: 100vh;
-	background-image: url("https://images.unsplash.com/photo-1520854221256-17451cc331bf");
+	background-image: url("../assets/HeroImage.png");
 	background-size: cover;
 	background-position: center;
 	display: flex;
@@ -1053,4 +1053,100 @@ section::before {
 		opacity: 1;
 		transform: translateY(0);
 	}
+}
+
+.map-container {
+	margin-top: 30px;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+.map-button {
+	display: inline-block;
+	margin-top: 20px;
+	padding: 12px 22px;
+	border-radius: 30px;
+
+	background: #5c6f82;
+	color: white;
+
+	font-size: 14px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
+	text-decoration: none;
+	transition: all 0.3s ease;
+
+	box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-button:hover {
+	background: #44596e;
+	transform: translateY(-2px);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.upload-card {
+	margin-top: 20px;
+	padding: 30px;
+	border-radius: 16px;
+
+	background: rgba(255, 255, 255, 0.7);
+	backdrop-filter: blur(8px);
+
+	border: 1px solid rgba(92, 111, 130, 0.2);
+
+	text-align: center;
+}
+
+.upload-card input {
+	margin-top: 15px;
+}
+.gallery {
+	margin-top: 40px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	gap: 15px;
+}
+
+.gallery img {
+	width: 100%;
+	height: 150px;
+	object-fit: cover;
+	border-radius: 12px;
+	cursor: pointer;
+	transition:
+		transform 0.3s ease,
+		box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+	transform: scale(1.05);
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+.upload-label {
+	display: inline-block;
+	margin-top: 15px;
+	padding: 12px 24px;
+
+	background: var(--ink-blue);
+	color: var(--paper);
+
+	border-radius: 30px;
+	cursor: pointer;
+
+	font-family: "Cormorant Garamond", serif;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+
+	transition: all 0.3s ease;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.upload-label:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.upload-label input {
+	display: none;
 }

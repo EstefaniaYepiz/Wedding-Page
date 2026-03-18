@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
 function Header() {
+	const names = import.meta.env.VITE_NAMES;
+	const date = import.meta.env.VITE_DATE;
 	useEffect(() => {
 		const handleScroll = () => {
 			const hero = document.querySelector(".hero");
@@ -15,9 +17,9 @@ function Header() {
 		<section className="hero">
 			<div className="hero-overlay">
 				<div className="hero-content">
-					<h1 className="names">Richard & Estefanía</h1>
+					<h1 className="names">{names}</h1>
 					<div className="divider" />
-					<p className="date">12 de Septiembre, 2026</p>
+					<p className="date">{date}</p>
 					<div className="scroll-indicator">↓</div>
 				</div>
 			</div>

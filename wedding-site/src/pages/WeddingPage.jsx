@@ -3,9 +3,9 @@ import Header from "../components/Header";
 import InvitationMessage from "../components/InvitationMessage";
 import EventDetails from "../components/EventDetails";
 import RSVP from "../components/RSVP";
-import PhotoSection from "../components/PhotoSection";
 import Countdown from "../components/Countdown";
 import Invitation from "../components/Invitation";
+import MediaUpload from "../components/MediaUpload";
 import "../styles/global.css";
 
 function App() {
@@ -97,7 +97,7 @@ function App() {
 			</div>
 			<div className="section-divider"></div>
 			<div className="fade-section">
-				<PhotoSection />
+				<MediaUpload />
 			</div>
 
 			<button
