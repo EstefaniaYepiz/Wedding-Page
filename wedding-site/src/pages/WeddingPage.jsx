@@ -7,6 +7,7 @@ import Countdown from "../components/Countdown";
 import Invitation from "../components/Invitation";
 import MediaUpload from "../components/MediaUpload";
 import FAQ from "../components/FAQ";
+import MusicPlayer from "../components/MusicPlayer";
 import "../styles/global.css";
 
 function App() {
@@ -104,6 +105,7 @@ function App() {
 			<div className="fade-section">
 				<FAQ />
 			</div>
+			<MusicPlayer />
 
 			<button
 				className="logout-btn"
@@ -112,7 +114,7 @@ function App() {
 					setIsAuthenticated(false);
 				}}
 			>
-				Cambiar contraseña
+				log out
 			</button>
 		</>
 	);

@@ -18,12 +18,12 @@ const faqItems = [
 	{
 		question: "¿Hasta cuándo puedo confirmar mi asistencia?",
 		answer:
-			"Favor de confirmar antes del 12 de agosto de 2026, después de esa fecha no se aceptarán más confirmaciones y no se les tomará en cuenta para el evento.",
+			"Favor de confirmar antes del 12 de agosto de 2026. En esa fecha se cerrará el registro y ya no será posible incluir a más asistentes.",
 	},
 	{
 		question: "Detalles del hotel",
 		answer:
-			"El hotel Castillos del mar contará con una tarifa especial para nuestros invitados. Si desean hacer uso de esa tarifa, pueden mencionar el evento a la hora de hacer su reservación. El evento será en el hotel pero pueden alojarse donde prefieran y llegar al evento por su cuenta.",
+			"El hotel Castillos del mar contará con una tarifa especial para nuestros invitados. Si desean hacer uso de esa tarifa, pueden mencionar el evento al momento de hacer su reservación. El evento será en el hotel pero pueden alojarse donde prefieran y llegar al evento por su cuenta.",
 	},
 ];
 

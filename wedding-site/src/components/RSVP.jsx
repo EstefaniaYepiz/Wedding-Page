@@ -79,7 +79,7 @@ function RSVP() {
 						<input
 							type="text"
 							name="recipient"
-							placeholder="Nombre del invitado (Ej: Tía Esther)"
+							placeholder="Nombre del invitado o invitados (Ej: Tía Esther)"
 							value={formData.recipient}
 							onChange={handleChange}
 						/>
