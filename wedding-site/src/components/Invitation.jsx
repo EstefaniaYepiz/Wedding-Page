@@ -1,4 +1,4 @@
-import invitationImg from "../assets/invitation.png";
+import invitationImg from "../assets/Invitation.png";
 function Invitation() {
 	return (
 		<section className="container invitation-section fade-section">
