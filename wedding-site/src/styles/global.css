@@ -1231,101 +1231,6 @@ section::before {
 	text-transform: uppercase;
 }
 
-.lightbox {
-	position: fixed;
-	inset: 0;
-	width: 102vw;
-	height: 102vh;
-	background: rgba(15, 20, 25, 0.92);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	z-index: 9999;
-	padding: 1.5rem;
-	overflow: hidden;
-}
-
-.lightbox-content {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.lightbox-media {
-	max-width: 92vw;
-	max-height: 88vh;
-	width: auto;
-	height: auto;
-	object-fit: contain;
-	border-radius: 18px;
-	box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
-	display: block;
-}
-
-.lightbox-close {
-	position: fixed;
-	top: 20px;
-	right: 24px;
-	background: rgba(255, 255, 255, 0.14);
-	color: white;
-	border: none;
-	font-size: 2rem;
-	width: 48px;
-	height: 48px;
-	border-radius: 50%;
-	cursor: pointer;
-	z-index: 10001;
-}
-
-.lightbox-nav {
-	position: fixed;
-	top: 50%;
-	transform: translateY(-50%);
-	background: rgba(255, 255, 255, 0.14);
-	color: white;
-	border: none;
-	font-size: 2.2rem;
-	width: 54px;
-	height: 54px;
-	border-radius: 50%;
-	cursor: pointer;
-	z-index: 10001;
-}
-
-.lightbox-prev {
-	left: 20px;
-}
-
-.lightbox-next {
-	right: 20px;
-}
-
-@media (max-width: 600px) {
-	.lightbox {
-		padding: 1rem;
-	}
-
-	.lightbox-media {
-		max-width: 95vw;
-		max-height: 80vh;
-	}
-
-	.lightbox-close {
-		top: 14px;
-		right: 14px;
-		width: 42px;
-		height: 42px;
-		font-size: 1.7rem;
-	}
-
-	.lightbox-nav {
-		width: 42px;
-		height: 42px;
-		font-size: 1.7rem;
-	}
-}
 .faq-section {
 	padding: var(--space-xl) var(--space-sm);
 }
@@ -1395,4 +1300,116 @@ section::before {
 .faq-answer p {
 	color: var(--soft-blue);
 	line-height: 1.7;
+}
+
+.lightbox {
+	position: fixed;
+	inset: 0;
+	width: 100vw;
+	height: 100dvh;
+	background: rgba(10, 14, 18, 0.96);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+	padding: 1rem;
+	overflow: hidden;
+}
+
+.lightbox-content {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lightbox-media {
+	max-width: 92vw;
+	max-height: 82dvh;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	border-radius: 18px;
+	box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+	display: block;
+}
+
+.lightbox-close {
+	position: fixed;
+	top: 16px;
+	right: 16px;
+	background: rgba(255, 255, 255, 0.16);
+	color: white;
+	border: none;
+	font-size: 1.8rem;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 10001;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lightbox-nav {
+	position: fixed;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.16);
+	color: white;
+	border: none;
+	font-size: 1.8rem;
+	width: 44px;
+	height: 44px;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 10001;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.lightbox-prev {
+	left: 12px;
+}
+
+.lightbox-next {
+	right: 12px;
+}
+
+@media (max-width: 768px) {
+	.lightbox {
+		padding: 0.75rem;
+	}
+
+	.lightbox-media {
+		max-width: 94vw;
+		max-height: 70dvh;
+		border-radius: 16px;
+	}
+
+	.lightbox-close {
+		top: 12px;
+		right: 12px;
+		width: 40px;
+		height: 40px;
+		font-size: 1.5rem;
+	}
+
+	.lightbox-nav {
+		width: 40px;
+		height: 40px;
+		font-size: 1.5rem;
+		background: rgba(255, 255, 255, 0.2);
+	}
+
+	.lightbox-prev {
+		left: 8px;
+	}
+
+	.lightbox-next {
+		right: 8px;
+	}
 }

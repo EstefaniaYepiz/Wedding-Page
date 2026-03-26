@@ -11,26 +11,12 @@ function MediaUpload() {
 		setSelectedIndex(null);
 	};
 	useEffect(() => {
+		if (!selectedMedia) return;
+
 		const handleKeyDown = (e) => {
 			if (e.key === "Escape") {
 				closeLightbox();
 			}
-		};
-
-		if (selectedMedia) {
-			window.addEventListener("keydown", handleKeyDown);
-		}
-
-		return () => {
-			window.removeEventListener("keydown", handleKeyDown);
-		};
-	}, [selectedMedia]);
-
-	useEffect(() => {
-		const handleKeyDown = (e) => {
-			if (!selectedMedia) return;
-
-			if (e.key === "Escape") closeLightbox();
 
 			if (e.key === "ArrowRight" && selectedIndex < media.length - 1) {
 				const next = selectedIndex + 1;
@@ -47,7 +33,9 @@ function MediaUpload() {
 
 		window.addEventListener("keydown", handleKeyDown);
 
-		return () => window.removeEventListener("keydown", handleKeyDown);
+		return () => {
+			window.removeEventListener("keydown", handleKeyDown);
+		};
 	}, [selectedMedia, selectedIndex, media]);
 
 	const fetchMedia = async () => {
