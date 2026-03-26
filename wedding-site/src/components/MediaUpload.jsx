@@ -152,67 +152,69 @@ function MediaUpload() {
 				))}
 			</div>
 
-			{selectedMedia && (
-				<div className="lightbox" onClick={closeLightbox}>
-					<button
-						className="lightbox-close"
-						onClick={(e) => {
-							e.stopPropagation();
-							closeLightbox();
-						}}
-					>
-						×
-					</button>
-
-					{selectedIndex > 0 && (
+			{selectedMedia &&
+				createPortal(
+					<div className="lightbox" onClick={closeLightbox}>
 						<button
-							className="lightbox-nav lightbox-prev"
+							className="lightbox-close"
 							onClick={(e) => {
 								e.stopPropagation();
-								const prevIndex = selectedIndex - 1;
-								setSelectedIndex(prevIndex);
-								setSelectedMedia(media[prevIndex]);
+								closeLightbox();
 							}}
 						>
-							‹
+							×
 						</button>
-					)}
 
-					<div
-						className="lightbox-content"
-						onClick={(e) => e.stopPropagation()}
-					>
-						{selectedMedia.type === "image" ? (
-							<img
-								src={selectedMedia.url}
-								alt="preview"
-								className="lightbox-media"
-							/>
-						) : (
-							<video
-								src={selectedMedia.url}
-								className="lightbox-media"
-								controls
-								autoPlay
-							/>
+						{selectedIndex > 0 && (
+							<button
+								className="lightbox-nav lightbox-prev"
+								onClick={(e) => {
+									e.stopPropagation();
+									const prevIndex = selectedIndex - 1;
+									setSelectedIndex(prevIndex);
+									setSelectedMedia(media[prevIndex]);
+								}}
+							>
+								‹
+							</button>
 						)}
-					</div>
 
-					{selectedIndex < media.length - 1 && (
-						<button
-							className="lightbox-nav lightbox-next"
-							onClick={(e) => {
-								e.stopPropagation();
-								const nextIndex = selectedIndex + 1;
-								setSelectedIndex(nextIndex);
-								setSelectedMedia(media[nextIndex]);
-							}}
+						<div
+							className="lightbox-content"
+							onClick={(e) => e.stopPropagation()}
 						>
-							›
-						</button>
-					)}
-				</div>
-			)}
+							{selectedMedia.type === "image" ? (
+								<img
+									src={selectedMedia.url}
+									alt="preview"
+									className="lightbox-media"
+								/>
+							) : (
+								<video
+									src={selectedMedia.url}
+									className="lightbox-media"
+									controls
+									autoPlay
+								/>
+							)}
+						</div>
+
+						{selectedIndex < media.length - 1 && (
+							<button
+								className="lightbox-nav lightbox-next"
+								onClick={(e) => {
+									e.stopPropagation();
+									const nextIndex = selectedIndex + 1;
+									setSelectedIndex(nextIndex);
+									setSelectedMedia(media[nextIndex]);
+								}}
+							>
+								›
+							</button>
+						)}
+					</div>,
+					document.body,
+				)}
 		</section>
 	);
 }
