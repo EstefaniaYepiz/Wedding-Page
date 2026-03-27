@@ -9,11 +9,11 @@ const faqItems = [
 	{
 		question: "¿Puedo llevar acompañante?",
 		answer:
-			"Sí, cada invitación es para dos personas. Si deseas llevar a alguien más, por favor contáctanos para verificar la disponibilidad.",
+			"Sí, cada invitación es para dos personas. Si deseas llevar otro acompañante, por favor contáctanos para verificar la disponibilidad.",
 	},
 	{
 		question: "¿Habrá niños en el evento?",
-		answer: "Sí, podrán asistir niños bajo previo aviso.",
+		answer: "Sí, podrán asistir niños bajo previa confirmación.",
 	},
 	{
 		question: "¿Hasta cuándo puedo confirmar mi asistencia?",
@@ -23,7 +23,7 @@ const faqItems = [
 	{
 		question: "Detalles del hotel",
 		answer:
-			"El hotel Castillos del mar contará con una tarifa especial para nuestros invitados. Si desean hacer uso de esa tarifa, pueden mencionar el evento al momento de hacer su reservación. El evento será en el hotel pero pueden alojarse donde prefieran y llegar al evento por su cuenta.",
+			"El hotel Castillos del mar contará con una tarifa especial para nuestros invitados. Si desean hacer uso de esa tarifa, pueden mencionar el evento al momento de hacer su reservación. El evento será en el hotel sin embargo, pueden elegir el alojamiento de su preferencia y acompañarnos al evento.",
 	},
 ];
 
