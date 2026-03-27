@@ -7,9 +7,42 @@ function MediaUpload() {
 	const [media, setMedia] = useState([]);
 	const [selectedMedia, setSelectedMedia] = useState(null);
 	const [selectedIndex, setSelectedIndex] = useState(null);
+	const [touchStartX, setTouchStartX] = useState(null);
+	const [touchEndX, setTouchEndX] = useState(null);
 	const closeLightbox = () => {
 		setSelectedMedia(null);
 		setSelectedIndex(null);
+	};
+	const minSwipeDistance = 50;
+
+	const handleTouchStart = (e) => {
+		setTouchEndX(null);
+		setTouchStartX(e.targetTouches[0].clientX);
+	};
+
+	const handleTouchMove = (e) => {
+		setTouchEndX(e.targetTouches[0].clientX);
+	};
+
+	const handleTouchEnd = () => {
+		if (!touchStartX || !touchEndX) return;
+
+		const distance = touchStartX - touchEndX;
+
+		const isLeftSwipe = distance > minSwipeDistance;
+		const isRightSwipe = distance < -minSwipeDistance;
+
+		if (isLeftSwipe && selectedIndex < media.length - 1) {
+			const nextIndex = selectedIndex + 1;
+			setSelectedIndex(nextIndex);
+			setSelectedMedia(media[nextIndex]);
+		}
+
+		if (isRightSwipe && selectedIndex > 0) {
+			const prevIndex = selectedIndex - 1;
+			setSelectedIndex(prevIndex);
+			setSelectedMedia(media[prevIndex]);
+		}
 	};
 	useEffect(() => {
 		if (!selectedMedia) return;
@@ -183,6 +216,9 @@ function MediaUpload() {
 						<div
 							className="lightbox-content"
 							onClick={(e) => e.stopPropagation()}
+							onTouchStart={handleTouchStart}
+							onTouchMove={handleTouchMove}
+							onTouchEnd={handleTouchEnd}
 						>
 							{selectedMedia.type === "image" ? (
 								<img

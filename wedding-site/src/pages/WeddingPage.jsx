@@ -85,13 +85,15 @@ function App() {
 			<div className="fade-section">
 				<Invitation />
 			</div>
-			<div className="section-divider"></div>
 			<div className="fade-section">
 				<Countdown />
 			</div>
-			<div className="section-divider"></div>
 			<div className="fade-section">
 				<EventDetails />
+			</div>
+			<div className="section-divider"></div>
+			<div className="fade-section">
+				<FAQ />
 			</div>
 			<div className="section-divider"></div>
 			<div className="fade-section">
@@ -101,10 +103,7 @@ function App() {
 			<div className="fade-section">
 				<MediaUpload />
 			</div>
-			<div className="section-divider"></div>
-			<div className="fade-section">
-				<FAQ />
-			</div>
+
 			<MusicPlayer />
 
 			<button

@@ -226,7 +226,7 @@ p {
 	content: "";
 	position: absolute;
 	inset: 15px;
-	border: 1px solid rgba(47, 65, 89, 0.3);
+	/* border: 1px solid rgba(47, 65, 89, 0.3); */
 	border-radius: 15px;
 	pointer-events: none;
 }
@@ -1121,7 +1121,7 @@ section::before {
 	padding: 12px 22px;
 	border-radius: 30px;
 
-	background: #5c6f82;
+	background-color: var(--ink-blue);
 	color: white;
 
 	font-size: 14px;
@@ -1399,8 +1399,27 @@ section::before {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
+.lightbox-content::after {
+	content: "Desliza para ver más";
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.75rem;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: rgba(255, 255, 255, 0.75);
+	pointer-events: none;
+}
+
+@media (min-width: 769px) {
+	.lightbox-content::after {
+		display: none;
+	}
+}
 .lightbox-media {
 	max-width: 92vw;
 	max-height: 82dvh;
@@ -1647,5 +1666,10 @@ section::before {
 		bottom: 12px;
 		padding: 0.65rem 1rem;
 		font-size: 0.75rem;
+	}
+}
+@media (max-width: 768px) {
+	.lightbox-nav {
+		display: none;
 	}
 }
