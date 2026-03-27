@@ -3,6 +3,7 @@ function EventDetails() {
 	const location = import.meta.env.VITE_LOCATION;
 	const date = import.meta.env.VITE_DATE;
 	const time = import.meta.env.VITE_TIME;
+	const time2 = import.meta.env.VITE_TIME2;
 	const mapUrl = import.meta.env.VITE_MAP_URL;
 	const mapLink = import.meta.env.VITE_MAP_LINK;
 
@@ -12,10 +13,12 @@ function EventDetails() {
 
 			<div className="details-card">
 				<p className="detail-date">{date}</p>
-				<p className="detail-time">{time}</p>
-
+				<p className="detail-time">
+					{time}
+					<br></br>
+					{time2}
+				</p>
 				<div className="divider small" />
-
 				<p className="detail-venue">{location}</p>
 				<p className="detail-address">{address}</p>
 				<div className="map-container">
