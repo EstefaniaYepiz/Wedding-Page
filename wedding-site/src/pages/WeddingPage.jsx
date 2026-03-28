@@ -99,11 +99,6 @@ function App() {
 			<div className="fade-section">
 				<RSVP />
 			</div>
-			<div className="section-divider"></div>
-			<div className="fade-section">
-				<MediaUpload />
-			</div>
-
 			<MusicPlayer />
 
 			<button
